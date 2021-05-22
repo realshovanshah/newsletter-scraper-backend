@@ -1,0 +1,31 @@
+{
+  "name": "newsletter-scraper",
+  "version": "1.0.0",
+  "description": "Scrapes newsletter and parses it into a structured format.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "ts-node-dev --respawn src/app.ts",
+    "build": "tsc"
+  },
+  "keywords": [
+    "scraping",
+    "newsletter",
+    "parser"
+  ],
+  "author": "@realshovanshah",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.10",
+    "puppeteer": "^9.1.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^15.3.1",
+    "@types/puppeteer": "^5.4.3",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.4"
+  }
+}
