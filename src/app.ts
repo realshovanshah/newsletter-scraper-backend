@@ -24,7 +24,7 @@ mongoose.connect(process.env.DB_URL as string, { useNewUrlParser: true, useUnifi
 
 app.get('/', async (req, res) => {
     console.log(`Received! from: ${req.ip}`)
-    res.send("<h2>Not a valid route!.</h2><p>These are the endpoints we expose:<p><p>/api/weekly-newsletter</p></h2><p>/api/daily-newsletter</p>")
+    res.send("<h2>Not a valid route!.</h2><p>These are the endpoints we expose:<p><p>/weekly-newsletter/all</p></h2><p>/weekly-newsletter/latest</p>")
 })
 
 
