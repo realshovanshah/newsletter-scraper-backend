@@ -6,6 +6,10 @@ const NewsletterSchema = new mongoose.Schema({
         required: true
     },
     posts: {
+        type: Map,
+        required: true
+    },
+    categories: {
         type: Array,
         required: true
     },

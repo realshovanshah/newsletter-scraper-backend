@@ -2,12 +2,20 @@ import express from "express"
 import { weeklyRouter } from './routes/weekly-newsletter'
 import mongoose from 'mongoose'
 import 'dotenv/config'
+import { scrapeRouter } from "./routes/scrape"
+import Newsletter from "./entity/Newsletter"
+import { scrapeNewsletter } from "./data/scraper"
 
 const app = express()
 const port = 3000
 
-app.use('/weekly-newsletter', weeklyRouter)
 app.use(express.json())
+
+app.use('/weekly-newsletter', weeklyRouter)
+app.use('/scrape', scrapeRouter)
+
+
+// scrapeNewsletter() //IMPP
 
 mongoose.connect(process.env.DB_URL as string, { useNewUrlParser: true, useUnifiedTopology: true }).then(() =>
     console.log('connected to the mongo database')
@@ -20,4 +28,4 @@ app.get('/', async (req, res) => {
 })
 
 
-app.listen(port, () => console.log(`App listening on port ${port}!`))
+app.listen(port, () => console.log(`App running on port http://localhost:${port} !`))
