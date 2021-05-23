@@ -1,1 +1,1 @@
-web: node src/app.ts
+web: node ts-built/app.js
